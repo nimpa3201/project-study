@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>인증된 페이지</title>
+</head>
+<body>
+<h1>인증된 페이지</h1>
+<p>이 페이지는 인증된 사용자만 접근할 수 있습니다.</p>
+
+<button onclick="logout()">로그아웃</button>
+<button onclick="goToHealthMain()">헬스정보게시판</button>
+<button onclick="goToCommunity()">커뮤니티</button>
+<button onclick="goToChatRoom()">채팅방 관리</button>
+
+<script>
+
+    function goToChatRoom(){
+
+        window.location.href = "/chat";
+    }
+    function logout() {
+        document.cookie = "jwtToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        // 로그아웃 후 메인 페이지로 리다이렉트합니다.
+        window.location.href = "/main";
+    }
+
+    function goToHealthMain() {
+        window.location.href = "/healthInform/main";
+    }
+
+    function goToCommunity() {
+        window.location.href = "/community";
+    }
+
+</script>
+</body>
+</html>

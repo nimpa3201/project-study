@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>커뮤니티 게시판</title>
+</head>
+<body>
+<h1>커뮤니티</h1>
+<p>환영합니다 커뮤니티 게시판 입니다.</p>
+<p>커뮤니티 게시판은 ( 자유게시판 오운완 챌린지 게시판)으로 구성되어 있습니다.</p>
+
+<button onclick="logout()">로그아웃</button>
+<button onclick="main()">메인페이지</button>
+<button onclick="FreeBoard()">자유 게시판</button>
+
+<script>
+  function logout() {
+    document.cookie = "jwtToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    // 로그아웃 후 메인 페이지로 리다이렉트합니다.
+    window.location.href = "/main";
+  }
+
+  function main() {
+    // 메인 페이지로 이동
+    window.location.href = "/main/auth";
+  }
+
+  function FreeBoard () {
+    window.location.href = "/community/FreeBoard";
+  }
+
+</script>
+
+</body>
+</html>
